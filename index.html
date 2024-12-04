@@ -1,0 +1,23 @@
+<html>
+<head>
+</head>
+<body>
+<script>
+function openGame() {
+    // Open a new tab with about:blank
+    var win = window.open('about:blank', '_blank');
+
+    // Wait for the new window to be ready, then inject content into it
+    win.document.write('<html><head><title>Game</title></head><body>');
+    win.document.write('<iframe src="https://classroom84x.netlify.app" style="width: 100%; height: 100%; border: none;"></iframe>');
+    win.document.write('</body></html>');
+
+    // Close the original tab
+    window.close();
+}
+
+// Trigger openGame immediately when the page loads
+window.onload = openGame;
+</script>
+</body>
+</html>
