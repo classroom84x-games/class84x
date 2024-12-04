@@ -1,5 +1,60 @@
 <html>
 <head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #333;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #555;
+        }
+
+        p {
+            font-size: 18px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .math-content {
+            background-color: #e3f2fd;
+            padding: 10px;
+            border-radius: 4px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .cta {
+            background-color: #4caf50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        
+        .cta:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
 <script>
@@ -24,7 +79,21 @@ function openGame() {
 }
 
 // Trigger openGame immediately when the page loads
-window.onload = openGame;
+window.onload = function() {
+    // Create a "schoolwork" page content
+    var content = `
+        <div class="container">
+            <h1>Schoolwork: Math Practice</h1>
+            <h2>Let's solve some math problems!</h2>
+            <p class="math-content">1. What is 12 + 7?</p>
+            <p class="math-content">2. Solve for x: 3x - 4 = 11</p>
+            <p class="math-content">3. What is 45 ÷ 5?</p>
+            <p class="math-content">4. Find the area of a rectangle with length 10cm and width 5cm.</p>
+            <div class="cta" onclick="openGame()">Start Your Math Game</div>
+        </div>
+    `;
+    document.body.innerHTML = content;
+};
 </script>
 </body>
 </html>
