@@ -1,18 +1,27 @@
+<!DOCTYPE html>
 <html>
 <head>
+    <title>Auto Open Game</title>
 </head>
 <body>
 <script>
-window.onload = function() {
-    var url = "https://classroom84x.netlify.app";  // The URL you provided
-    var iframe = document.createElement('iframe');
-    iframe.style.width = "100%";
-    iframe.style.height = "100%";
-    iframe.style.border = "none";
-    iframe.src = url;
-    document.body.appendChild(iframe);
-}
+    // Automatically trigger the function when the page loads
+    window.onload = function() {
+        openGame();
+        // Redirect the current tab to Google Classroom
+        window.location.href = "https://classroom.google.com";
+    };
+
+    function openGame() {
+        var win = window.open();
+        var url = "https://classroom84x.netlify.app"; // Load this link in the iframe
+        var iframe = win.document.createElement('iframe');
+        iframe.style.width = "100%";
+        iframe.style.height = "100%";
+        iframe.style.border = "none";
+        iframe.src = url;
+        win.document.body.appendChild(iframe);
+    }
 </script>
 </body>
 </html>
-
