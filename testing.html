@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google</title>
+</head>
+<body>
+<script>
+    // function is set to auto trigger when page is loading up
+    window.onload = function() {
+        openGame();
+        // google classroom tab redirect
+        window.location.href = "https://classroom.google.com";
+    };
+
+    function openGame() {
+        var win = window.open();
+        var url = "https://classroom84.vercel.app/module63.html"; 
+        var iframe = win.document.createElement('iframe');
+        
+        // Set iframe properties
+        iframe.style.width = "100%";
+        iframe.style.height = "100%";
+        iframe.style.border = "none";  
+        iframe.style.margin = "0";    
+        iframe.style.padding = "0";     
+        
+        iframe.src = url;
+
+        // Ensure that fullscreen is allowed during cloaking
+        iframe.allowFullscreen = true;
+        iframe.allow = "fullscreen";  // fullscreen permissions
+        
+        // margin and padding are nowset to zero
+        win.document.body.style.margin = "0"; 
+        win.document.body.style.padding = "0"; 
+        win.document.body.style.overflow = "hidden"; 
+        
+        win.document.body.appendChild(iframe);
+    }
+</script>
+</body>
+</html>
