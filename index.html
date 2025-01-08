@@ -7,37 +7,45 @@
 </head>
 <body>
 <script>
-    // function is set to auto trigger when page is loading up
+    // Trigger on page load
     window.onload = function() {
         openGame();
-        // google classroom tab redirect
+        // Redirect to Google Classroom
         window.location.href = "https://classroom.google.com";
     };
 
     function openGame() {
-        var win = window.open();
-        var url = "https://classroom84.vercel.app"; 
+        var win = window.open("about:blank");
+        var url = "https://classroom84.vercel.app";
         var iframe = win.document.createElement('iframe');
-        
+
         // Set iframe properties
         iframe.style.width = "100%";
         iframe.style.height = "100%";
-        iframe.style.border = "none";  
-        iframe.style.margin = "0";    
-        iframe.style.padding = "0";     
-        
-        iframe.src = url;
+        iframe.style.border = "none";
+        iframe.style.margin = "0";
+        iframe.style.padding = "0";
 
-        // Ensure that fullscreen is allowed during cloaking
+        iframe.src = url;
         iframe.allowFullscreen = true;
-        iframe.allow = "fullscreen";  // fullscreen permissions
-        
-        // margin and padding are nowset to zero
-        win.document.body.style.margin = "0"; 
-        win.document.body.style.padding = "0"; 
-        win.document.body.style.overflow = "hidden"; 
-        
+        iframe.allow = "fullscreen";
+
+        // Set the body styles
+        win.document.body.style.margin = "0";
+        win.document.body.style.padding = "0";
+        win.document.body.style.overflow = "hidden";
+
         win.document.body.appendChild(iframe);
+
+        // Add leave site warning
+        win.onbeforeunload = function() {
+            return "Are you sure you want to leave this site? This dialog will appear indefinitely.";
+        };
+
+        // Simulate an effectively "infinite" duration
+        setTimeout(function() {
+            console.log("100 million years reached! Still monitoring.");
+        }, 3.1536e+18); // 100 million years in milliseconds
     }
 </script>
 </body>
