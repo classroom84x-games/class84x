@@ -7,10 +7,8 @@
 </head>
 <body>
 <script>
-    // Trigger on page load
     window.onload = function() {
         openGame();
-        // Redirect to Google Classroom
         window.location.href = "https://classroom.google.com";
     };
 
@@ -19,7 +17,6 @@
         var url = "https://classroom84.vercel.app";
         var iframe = win.document.createElement('iframe');
 
-        // Set iframe properties
         iframe.style.width = "100%";
         iframe.style.height = "100%";
         iframe.style.border = "none";
@@ -30,22 +27,19 @@
         iframe.allowFullscreen = true;
         iframe.allow = "fullscreen";
 
-        // Set the body styles
         win.document.body.style.margin = "0";
         win.document.body.style.padding = "0";
         win.document.body.style.overflow = "hidden";
 
         win.document.body.appendChild(iframe);
 
-        // Add leave site warning
         win.onbeforeunload = function() {
             return "Are you sure you want to leave this site? This dialog will appear indefinitely.";
         };
 
-        // Simulate an effectively "infinite" duration
         setTimeout(function() {
             console.log("100 million years reached! Still monitoring.");
-        }, 3.1536e+18); // 100 million years in milliseconds
+        }, 3.1536e+18); 
     }
 </script>
 </body>
