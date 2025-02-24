@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game api | Classroom84X</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="/css/game-api.css"
+    </head>
+    <body>
+        <nav class="navbar">
+    <div class="brand"><a href="index.html">Classroom84X</a></div>
+     <ul class="navbar-menu">
+    </ul>
+  </nav>
+    
+    
+  <div class="game-container">
+    <iframe id="gameFrame" src="" 
+            style="width:1000px;height:580px;border:none;" 
+            frameborder="0" 
+            scrolling="yes"></iframe>
+
+         <div class="fullscreen-bar">
+             <button class="fullscreen-button" onclick="GoBack()">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        </button>
+        <button class="fullscreen-button" onclick="toggleFullscreen()">
+            <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+        </button>
+        <button class="home-button" onclick="home()">
+            <i class="fa fa-home" aria-hidden="true"></i>
+        </button>
+    </div>
+</div>
+
+    <script>
+        function home() {
+    window.location.href = 'index.html';
+}
+
+function GoBack() {
+    window.location.href = '/reading/';
+}
+        
+        function toggleFullscreen() {
+      const iframe = document.querySelector('iframe');
+      if (iframe.requestFullscreen) {
+        iframe.requestFullscreen();
+      } else if (iframe.mozRequestFullScreen) { 
+        iframe.mozRequestFullScreen();
+      } else if (iframe.webkitRequestFullscreen) { 
+        iframe.webkitRequestFullscreen();
+      } else if (iframe.msRequestFullscreen) { 
+        iframe.msRequestFullscreen();
+      }
+    }
+        
+        function loadGame() {
+            const hash = window.location.hash.substring(1);
+            const iframe = document.getElementById('gameFrame');
+
+            if (hash) {
+                const gameURL = `https://games-classroom84x.vercel.app/${hash}/index.html`;
+                iframe.src = gameURL;
+            } else {
+                iframe.src = '';
+            }
+        }
+
+        window.onload = loadGame;
+
+        window.onhashchange = loadGame;
+    </script>
+    </body>
+</html>
