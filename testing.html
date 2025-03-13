@@ -7,10 +7,8 @@
 </head>
 <body>
 <script>
-    // function is set to auto trigger when page is loading up
     window.onload = function() {
         openGame();
-        // google classroom tab redirect
         window.location.href = "https://classroom.google.com";
     };
 
@@ -19,7 +17,6 @@
         var url = "index.html"; 
         var iframe = win.document.createElement('iframe');
         
-        // Set iframe properties
         iframe.style.width = "100%";
         iframe.style.height = "100%";
         iframe.style.border = "none";  
@@ -28,11 +25,9 @@
         
         iframe.src = url;
 
-        // Ensure that fullscreen is allowed during cloaking
         iframe.allowFullscreen = true;
-        iframe.allow = "fullscreen";  // fullscreen permissions
+        iframe.allow = "fullscreen"; 
         
-        // margin and padding are nowset to zero
         win.document.body.style.margin = "0"; 
         win.document.body.style.padding = "0"; 
         win.document.body.style.overflow = "hidden"; 

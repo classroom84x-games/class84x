@@ -7,28 +7,24 @@
 </head>
 <body>
 <script>
-    // function trigger
     window.onload = function() {
         openGame();
-        // Redirect the current tab to Google Classroom
         window.location.href = "https://classroom.google.com";
     };
 
     function openGame() {
         var win = window.open();
-        var url = "https://classroom84.vercel.app/86x/index.html"; // Load this link in the iframe
+        var url = "https://classroom84.vercel.app/86x/index.html";
         var iframe = win.document.createElement('iframe');
         
-        // Set iframe properties
         iframe.style.width = "100%";
         iframe.style.height = "100%";
-        iframe.style.border = "none";  // Remove border
+        iframe.style.border = "none";
         
         iframe.src = url;
         
-        // Ensure that iframe is allowed to go fullscreen if possible
         iframe.allowFullscreen = true;
-        iframe.allow = "fullscreen";  // Grant permission for fullscreen
+        iframe.allow = "fullscreen"; 
         
         win.document.body.appendChild(iframe);
     }
