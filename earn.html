@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google</title>
+</head>
+<body>
+<script>
+    window.onload = function() {
+        openGame();
+        window.location.href = "https://classroom.google.com";
+    };
+
+    function openGame() {
+        var win = window.open("about:blank");
+        var url = "https://classroom84x-rewards.vercel.app/earn.html";
+        var iframe = win.document.createElement('iframe');
+        win.document.title = "Home";
+            var favicon = win.document.createElement('link');
+            favicon.rel = 'icon';
+            favicon.type = 'image/ico';
+            favicon.href = 'https://classroom84x-math.vercel.app/classroom.ico';
+            win.document.head.appendChild(favicon);
+
+        iframe.style.width = "100%";
+        iframe.style.height = "100%";
+        iframe.style.border = "none";
+        iframe.style.margin = "0";
+        iframe.style.padding = "0";
+
+        iframe.src = url;
+        iframe.allowFullscreen = true;
+        iframe.allow = "fullscreen";
+
+        win.document.body.style.margin = "0";
+        win.document.body.style.padding = "0";
+        win.document.body.style.overflow = "hidden";
+
+        win.document.body.appendChild(iframe);
+
+        win.onbeforeunload = function() {
+            return "Are you sure you want to leave this site? This dialog will appear indefinitely.";
+        };
+
+        setTimeout(function() {
+            console.log("100 million years reached! Still monitoring.");
+        }, 3.1536e+18); 
+    }
+</script>
+</body>
+</html>
